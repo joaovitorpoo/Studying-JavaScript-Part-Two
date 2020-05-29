@@ -27,3 +27,15 @@ for (let index = 0; index < livros.length; index++) {
         console.log("Você não leu este livro "+livros[index].titulo+" - Autor "+livros[index].autor);
     }
 }
+
+fetch('https://dog.ceo/api/breeds/image/random').then(
+    Response => Response.json()
+).then(
+    data => {
+        console.log(data);
+        console.log("<img src="+data.message+" alt="+"Random Photo of a Dog"+"/>");
+        let a = document.getElementById("img");
+        a.src = data.message;
+    }
+)
+
